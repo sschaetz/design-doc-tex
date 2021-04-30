@@ -1,0 +1,84 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[demo]{graphicx}
+\usepackage{hyperref}
+\usepackage{array}
+
+\usepackage{lastpage}
+\usepackage{lipsum}
+\usepackage{boldline} 
+\usepackage{tabularx} % in the preamble
+\usepackage{fancyhdr}
+\usepackage[hmargin=2cm,top=4cm,headheight=130pt,footskip=65pt]{geometry}
+\renewcommand{\familydefault}{\sfdefault}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\urlstyle{same}
+
+\setlength{\parindent}{0.95cm}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[CE,CO,LE,LO,RE,RO]{} %% clear out all headers
+\fancyhead[C]{%
+           \begin{flushleft}
+          \includegraphics[height=1.5cm,width=2.5cm]{logo.png}
+          \end{flushleft}
+          \bgroup
+          \def\arraystretch{1.5}% 
+          \begin{tabular}{V{4}l|l|l|lV{4}}
+            \hlineB{4}
+            \multicolumn{4}{V{4}cV{4}}{
+                \textbf{\textless{}Document Title\textgreater{}}
+            } \\ 
+            \hline
+            {\footnotesize Type: \textless{}Type\textgreater{}} & 
+            {\footnotesize No.: \textless{}Number\textgreater{}} & 
+            {\footnotesize Version: \textless{}Document Version\textgreater{}} & 
+            {\footnotesize Page: \thepage of \pageref{LastPage}} \\ 
+            \hlineB{4}
+          \end{tabular}%
+          \egroup
+}
+
+
+\begin{document}
+
+\section{Purpose}
+This document defines the hardware and software test procedures required for verification of a
+self-sealing stem bolt. As we know nothing could be built without bolts. They are a basic component of reverse-ratcheting routing planers.
+\section{References}
+
+\subsection{Internal References}
+
+\begin{itemize}
+	\item       Self-sealing stem bolt on memory-alpha.fandom.com (\href{https://memory-alpha.fandom.com/wiki/Self-sealing_stem_bolt}{link})
+	\item  Self-sealing stem bolt on memory-beta.fandom.com (\href{https://memory-beta.fandom.com/wiki/Self-sealing_stembolt}{link})
+\end{itemize}
+
+\section{System Verification}
+\subsection{Objective}
+\subsection{Required Equipment}
+\subsection{Setup and Configuration}
+\subsection{Requirements Tested}
+
+
+
+\begin{tabularx}{\textwidth}{|X|}
+	\hline
+	\textbf{Requirements from Document Number:}t \\ Reference the document where the requirements are coming from here \\ \hline
+	S3.1.1, S3.2.2, S3.2.3, S3.2.4               \\ \hline
+\end{tabularx}
+
+
+\subsubsection{Procedure and Test Worksheet}
+
+
+
+\end{document}
