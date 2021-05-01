@@ -3,12 +3,13 @@
 \usepackage[demo]{graphicx}
 \usepackage{hyperref}
 \usepackage{array}
-
 \usepackage{lastpage}
 \usepackage{lipsum}
 \usepackage{boldline} 
-\usepackage{tabularx} % in the preamble
+\usepackage{tabularx, colortbl}
 \usepackage{fancyhdr}
+\usepackage{xltabular}
+\usepackage{amssymb}
 \usepackage[hmargin=2cm,top=4cm,headheight=130pt,footskip=65pt]{geometry}
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -18,6 +19,10 @@
     filecolor=magenta,      
     urlcolor=cyan,
 }
+\newcounter{teststepctr}
+
+
+\definecolor{gray}{cmyk}{0.05,0.05,0.05,0.05}
 
 \urlstyle{same}
 
@@ -28,7 +33,7 @@
 \fancyhead[CE,CO,LE,LO,RE,RO]{} %% clear out all headers
 \fancyhead[C]{%
            \begin{flushleft}
-          \includegraphics[height=1.5cm,width=2.5cm]{logo.png}
+          \includegraphics[height=1.5 cm,width=2.5cm]{logo.png}
           \end{flushleft}
           \bgroup
           \def\arraystretch{1.5}% 
@@ -58,27 +63,178 @@ self-sealing stem bolt. As we know nothing could be built without bolts. They ar
 \subsection{Internal References}
 
 \begin{itemize}
-	\item       Self-sealing stem bolt on memory-alpha.fandom.com (\href{https://memory-alpha.fandom.com/wiki/Self-sealing_stem_bolt}{link})
+	\item  Self-sealing stem bolt on memory-alpha.fandom.com (\href{https://memory-alpha.fandom.com/wiki/Self-sealing_stem_bolt}{link})
 	\item  Self-sealing stem bolt on memory-beta.fandom.com (\href{https://memory-beta.fandom.com/wiki/Self-sealing_stembolt}{link})
 \end{itemize}
 
 \section{System Verification}
+This document describes the system verification for self-sealing stem bolt. Unfortunately self-sealing stem bolts are mysterious devices of unknown use and origin. The field of application of the self-sealing stem bolts is shrouded in mystery.
+
 \subsection{Objective}
+
+Even though the self-sealing stem bolt is a mysterious device, this document outlines a procedure to determine how one can be tested.
+
 \subsection{Required Equipment}
+
+\begin{itemize}
+	\item standard issue Tricorder
+	\item 20T NMR spectrometer
+	\item quantum combobulator
+\end{itemize}
+
+
+
 \subsection{Setup and Configuration}
+
+No special setup and configuration is required beyond ensuring calibration of Tricorder, spectrometer and combobulator.
+
 \subsection{Requirements Tested}
 
 
-
+\bgroup
+\def\arraystretch{1.5}% 
 \begin{tabularx}{\textwidth}{|X|}
 	\hline
-	\textbf{Requirements from Document Number:}t \\ Reference the document where the requirements are coming from here \\ \hline
-	S3.1.1, S3.2.2, S3.2.3, S3.2.4               \\ \hline
+	\textbf{Requirements from Document Number:} \\ Reference the document where the requirements are coming from here \\ \hline
+	S3.1.1, S3.2.2, S3.2.3, S3.2.4              \\ \hline
 \end{tabularx}
-
+\egroup
 
 \subsubsection{Procedure and Test Worksheet}
 
+\bgroup
+\def\arraystretch{1.5}% 
+\begin{tabularx}{\textwidth}{|>{\hsize=.8\hsize\linewidth=\hsize}X|>{\hsize=1.2\hsize\linewidth=\hsize}X|}
+	\hline
+	\textbf{Stardate Test Performed}           & \\ \hline
+	\textbf{Starbase Test Performed}           & \\ \hline
+	\textbf{Test System Serial \#}             & \\ \hline
+	\textbf{Test Computer Serial \#}           & \\ \hline
+	\textbf{Functional self-sealing stem bolt} & \\ \hline
+	\textbf{Defective self-sealing stem bolt}  & \\ \hline
+\end{tabularx}
+\egroup
 
+
+
+
+\bgroup
+
+\small
+\def\arraystretch{1.5}% 
+\begin{xltabular}{\textwidth}{
+	|>{\hsize=0.25\hsize\linewidth=\hsize}X
+	|>{\hsize=1.85\hsize\linewidth=\hsize}X
+	|>{\hsize=1.85\hsize\linewidth=\hsize}X
+	|>{\hsize=0.25\hsize\linewidth=\hsize}X
+	|>{\hsize=0.8\hsize\linewidth=\hsize}X
+	|
+	}
+	\hline
+	\rowcolor{gray}
+
+
+	Step  &
+	Action  &
+	Verification  &
+	P/F  &
+	Result, Notes   \\ \hline \endhead
+	\addtocounter{teststepctr}{1} \theteststepctr \ &
+	Ensure indicator lights are working by pressing and holding down the on button for 10 seconds.&
+	All indicator lights (red, gree, blue) flash first one after another twice and then all together 3 times.
+	&
+
+	&
+
+	\\ \hline
+
+	\addtocounter{teststepctr}{1} \theteststepctr \ &
+	Ensure correct composition of self-sealing stem bolt by inserting it into a spectrometer &
+	The stem bolt should consist of 80\% mixed duranium, aluminum, and steel alloys, 11\% electrically modulated ceramic, and 9\% thermally stabilized plastic.
+	&
+
+	&
+
+	\\ \hline
+
+
+
+\end{xltabular}
+\egroup
+
+
+\noindent\bgroup
+\def\arraystretch{1.5}% 
+\begin{tabularx}{\textwidth}{|X|}
+	\hline
+	\textbf{Summary Report Results:} \\  \hline
+	Additional Comments:             \\ \rule{0pt}{12ex}     \\ \hline
+
+
+	\bgroup
+	\def\arraystretch{1.1}% 
+	\begin{tabular}{@{}p{0.98in}p{3.2in}p{0.3in}p{1.4in}@{}}
+		\rule{0pt}{3ex}                                                  \\
+		Completed by: & \hrulefill                  & Date: & \hrulefill \\
+		              & Lieutenant junior grade Nog &       &            \\
+		              & Junior Engineer             &       &            \\
+	\end{tabular}
+	\egroup
+	\\ \hline
+
+
+	\bgroup
+	\def\arraystretch{1.1}% 
+	\begin{tabular}{@{}p{0.98in}p{1.45in}p{1.45in}p{1.6in}@{}}
+		\rule{0pt}{.5ex}                                 \\ Result: &
+		Pass $\square$ &
+		Fail $\square$ &
+		Pass with limitations $\square$ \rule{0pt}{.5ex} \\
+	\end{tabular}
+	\egroup
+	\\ \hline
+
+
+
+	\bgroup
+	\def\arraystretch{1.1}% 
+	\begin{tabular}{@{}p{0.98in}p{3.2in}p{0.3in}p{1.4in}@{}}
+		\rule{0pt}{3ex}                                                          \\
+		Approved By: & \hrulefill                           & Date: & \hrulefill \\
+		             & Lieutenant commander Geordi La Forge &       &            \\
+		             & Chief Engineer                       &       &            \\
+	\end{tabular}
+	\egroup
+	\\ \hline
+\end{tabularx}
+\egroup
+
+
+\section{Document Revision History}
+
+
+
+\bgroup
+
+\small
+\def\arraystretch{1.5}% 
+\begin{xltabular}{\textwidth}{
+	|>{\hsize=0.15\hsize\linewidth=\hsize}X
+	|>{\hsize=1.7\hsize\linewidth=\hsize}X
+	|>{\hsize=0.15\hsize\linewidth=\hsize}X
+	|
+	}
+	\hline
+	\rowcolor{gray}
+
+
+	Ver  &
+	Change Description  &
+	Author  \\ \hline \endhead
+
+	01 & Release version 1 of self-sealing stem bolt & Nog \\ \hline
+
+\end{xltabular}
+\egroup
 
 \end{document}
