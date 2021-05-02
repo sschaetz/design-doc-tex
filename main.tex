@@ -1,6 +1,5 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[demo]{graphicx}
 \usepackage{hyperref}
 \usepackage{array}
 \usepackage{lastpage}
@@ -10,7 +9,26 @@
 \usepackage{fancyhdr}
 \usepackage{xltabular}
 \usepackage{amssymb}
-\usepackage[hmargin=2cm,top=4cm,headheight=130pt,footskip=65pt]{geometry}
+\usepackage{graphicx}
+\usepackage[hmargin=2cm,top=5.5cm,headheight=130pt,footskip=65pt]{geometry}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{REQ}
+
+
+\newcount\savedtheorem
+%\stepcounter{theorem}
+\newenvironment{subtheorems}{%
+  \savedtheorem=\value{theorem}%
+  \edef\prevthetheorem{\thetheorem}%
+  \setcounter{theorem}{0}%
+  \renewcommand\thetheorem{\prevthetheorem.\arabic{theorem}}%
+}
+{%
+  \setcounter{theorem}{\savedtheorem}%
+}
+
 \renewcommand{\familydefault}{\sfdefault}
 
 \hypersetup{
@@ -26,26 +44,26 @@
 
 \urlstyle{same}
 
-\setlength{\parindent}{0.95cm}
+%\setlength{\parindent}{4cm}
 
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhead[CE,CO,LE,LO,RE,RO]{} %% clear out all headers
 \fancyhead[C]{%
            \begin{flushleft}
-          \includegraphics[height=1.5 cm,width=2.5cm]{logo.png}
+          \includegraphics[height=2.5cm,width=2.5cm]{Starfleet_Corps_of_Engineers_Logo.png}
           \end{flushleft}
           \bgroup
           \def\arraystretch{1.5}% 
           \begin{tabular}{V{4}l|l|l|lV{4}}
             \hlineB{4}
             \multicolumn{4}{V{4}cV{4}}{
-                \textbf{\textless{}Document Title\textgreater{}}
+                \textbf{Requirements and Test Specification - Self-Sealing Stem Bolt }
             } \\ 
             \hline
-            {\footnotesize Type: \textless{}Type\textgreater{}} & 
-            {\footnotesize No.: \textless{}Number\textgreater{}} & 
-            {\footnotesize Version: \textless{}Document Version\textgreater{}} & 
+            {\footnotesize Type: Requirement \& Test Specification} & 
+            {\footnotesize No.: 176-3049211-02} & 
+            {\footnotesize Version: 1} & 
             {\footnotesize Page: \thepage of \pageref{LastPage}} \\ 
             \hlineB{4}
           \end{tabular}%
@@ -56,8 +74,7 @@
 \begin{document}
 
 \section{Purpose}
-This document defines the hardware and software test procedures required for verification of a
-self-sealing stem bolt. As we know nothing could be built without bolts. They are a basic component of reverse-ratcheting routing planers.
+This document defines the hardware and software requirements as well as test procedures required for verification of a self-sealing stem bolt. As we know nothing could be built without bolts. They are a basic component of reverse-ratcheting routing planers.
 \section{References}
 
 \subsection{Internal References}
@@ -66,6 +83,75 @@ self-sealing stem bolt. As we know nothing could be built without bolts. They ar
 	\item  Self-sealing stem bolt on memory-alpha.fandom.com (\href{https://memory-alpha.fandom.com/wiki/Self-sealing_stem_bolt}{link})
 	\item  Self-sealing stem bolt on memory-beta.fandom.com (\href{https://memory-beta.fandom.com/wiki/Self-sealing_stembolt}{link})
 \end{itemize}
+
+\section{System Requirements}
+
+
+
+\subsection{User Interface}
+
+\begin{theorem}
+	All system shall have an interface that allows users (operator, maintainer, engineer) to access the system directly.
+\end{theorem}
+
+\noindent\textbf{\large{Language and Labels}}
+
+\begin{subtheorems}
+	\begin{theorem}
+		All labeling shall be in English or Andorian.
+	\end{theorem}
+
+	\begin{theorem}
+		The part number, revision and serial number should be visible on the outside of the self-sealing stem bolt.
+	\end{theorem}
+
+	\noindent\textbf{\large{User Controller Parameters}}
+
+	\begin{theorem}
+		The user shall be able to select the magnetic flux capacitance flow through the self-sealing stem bolt by increments of 5 MEV and a range between 0 MeV and 1 TeV.
+	\end{theorem}
+
+	\begin{theorem}
+		The user shall be able to read the current magnetic flux capacitance flow through the self-sealing stem bolt under the following light conditions: full sunlight, dusk, dawn, shadow, indoors, luminescent light, complete darkness.
+	\end{theorem}
+
+	\begin{theorem}
+		The self-sealing stem bolt shall have a debug interface that allows authorized users access to
+		low level functionality and operational logs.
+	\end{theorem}
+
+
+	\noindent\textbf{\large{Error Messages}}
+
+	\begin{theorem}
+		The self-sealing stem bolt shall have an audio-visual malfunction indicator.
+	\end{theorem}
+	\begin{theorem}
+		The self-sealing stem bolt shall output detailed error messages via the debug interface in the case of an error.
+	\end{theorem}
+
+
+\end{subtheorems}
+
+\subsection{Modes of Operation}
+
+
+\begin{theorem}
+	The self-sealing stem bolt shall have an operational mode and a maintenance mode.
+\end{theorem}
+
+\begin{subtheorems}
+
+	\noindent\textbf{\large{Installation \& Startup}}
+
+
+	\noindent\textbf{\large{Operational Mode}}
+
+
+\end{subtheorems}
+
+
+
 
 \section{System Verification}
 This document describes the system verification for self-sealing stem bolt. Unfortunately self-sealing stem bolts are mysterious devices of unknown use and origin. The field of application of the self-sealing stem bolts is shrouded in mystery.
@@ -157,7 +243,35 @@ No special setup and configuration is required beyond ensuring calibration of Tr
 
 	\\ \hline
 
+	\addtocounter{teststepctr}{1} \theteststepctr \ &
+	Insert self-stealing stem bolt in quantum combobulator and verify left and right-handed quantum flux capacitance &
+	The measured flux capacitance on the left hand should not exceed an output conductance of 17.8 $\pm$ 2 millimohs.
+	The measured flux capacitance on the right hand should not exceed an output conductance of 3.2 $\pm$ 1 nanomohs.
+	&
 
+	&
+
+	\\ \hline
+
+	\addtocounter{teststepctr}{1} \theteststepctr \ &
+	Verify the positive and negative ion flow in upper and lower unilateral phase detractor alignment assemblies when applying a 750V with a phase offset of 5403 Furmans.  &
+	The negative ion flow in the upper unilateral phase detractor alignment assembly does not exceed 56 Mol/Angstrom and 23 Mol/Anstrom in the lower alignment assembly.
+	The measured flux capacitance on the right hand should not exceed an output conductance of 3.2 $\pm$ 1 nanomohs.
+	&
+
+	&
+
+	\\ \hline
+
+	\addtocounter{teststepctr}{1} \theteststepctr \ &
+	Verify the positive and negative ion flow in upper and lower unilateral phase detractor alignment assemblies when applying a 750V with a phase offset of 14664 Furmans.  &
+	The negative ion flow in the upper unilateral phase detractor alignment assembly does not exceed 104 Mol/Angstrom and 72 Mol/Anstrom in the lower alignment assembly.
+	The measured flux capacitance on the right hand should not exceed an output conductance of 6.32 $\pm$ 2 nanomohs.
+	&
+
+	&
+
+	\\ \hline
 
 \end{xltabular}
 \egroup
