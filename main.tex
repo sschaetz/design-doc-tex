@@ -10,8 +10,9 @@
 \usepackage{xltabular}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage[hmargin=2cm,top=5.5cm,headheight=130pt,footskip=65pt]{geometry}
+\usepackage[hmargin=2cm,top=5.5cm,headheight=130pt,footskip=55pt]{geometry}
 \usepackage{amsthm}
+\usepackage[version=4]{mhchem}
 
 \theoremstyle{definition}
 \newtheorem{theorem}{REQ}
@@ -64,12 +65,12 @@
             {\footnotesize Type: Requirement \& Test Specification} & 
             {\footnotesize No.: 176-3049211-02} & 
             {\footnotesize Version: 1} & 
-            {\footnotesize Page: \thepage of \pageref{LastPage}} \\ 
+            {\footnotesize Page: \thepage \hspace{1pt} of \pageref*{LastPage}} \\ 
             \hlineB{4}
           \end{tabular}%
           \egroup
 }
-
+\fancyfoot[c]{\small{Starfleet Corps of Engineers, Fleet Operations Center, San Francisco, Earth, Sol Sector \\Proprietary and Confidential}}
 
 \begin{document}
 
@@ -144,11 +145,47 @@ This document defines the hardware and software requirements as well as test pro
 
 	\noindent\textbf{\large{Installation \& Startup}}
 
+	\begin{theorem}
+		The self-sealing stem bolt shall be installable with a size 8 hex key and a hypersonic spanner.
+	\end{theorem}
+
+	\begin{theorem}
+		The self-sealing stem bolt shall be started with a standard 9V battery and shall sustain itself after it was started up once.
+	\end{theorem}
 
 	\noindent\textbf{\large{Operational Mode}}
+	\begin{theorem}
+		The self-sealing stem bolt shall have an operational mode.
+	\end{theorem}
 
 
 \end{subtheorems}
+
+\subsection{Environmental Requirements}
+
+\begin{theorem}
+	The self-sealing stem bolt shall operate in a diverse set of environments that can be found throughout the alpha-quadrant.
+\end{theorem}
+\begin{subtheorems}
+	\begin{theorem}
+		The self-sealing stem bolt shall operate in the following atmospheres and environment:
+		\begin{itemize}
+			\item 42\% \ce{O_2} 29\% \ce{Na} 22\% \ce{H_2} 7\% mix of \ce{He, K, Ar, CO_2, H_2O, N_2 Xe, Kr, Ne}
+			\item 96\% \ce{CO_2}, 3\% \ce{N_2}, 1\% mix of \ce{SO_2, Ar, H_2O, CO, He, Ne} and clouds of \textbf{\ce{H_2SO_4}}
+			\item 78\% \ce{N_2}, 21\% \ce{O_2}, approx. 1\% \ce{Ar}, $<$1\% \ce{CO_2, Ne, He, CH_4, Kr, H_2}
+		\end{itemize}
+	\end{theorem}
+
+	\begin{theorem}
+		The self-sealing stem bolt shall operate in environments with up to 10MPa of atmospheric pressure.
+	\end{theorem}
+	\begin{theorem}
+		The self-sealing stem bolt shall operate in environments with temperatures from 0\textdegree K to 573,15\textdegree K.
+	\end{theorem}
+\end{subtheorems}
+
+
+
 
 
 
@@ -192,12 +229,13 @@ No special setup and configuration is required beyond ensuring calibration of Tr
 \def\arraystretch{1.5}% 
 \begin{tabularx}{\textwidth}{|>{\hsize=.8\hsize\linewidth=\hsize}X|>{\hsize=1.2\hsize\linewidth=\hsize}X|}
 	\hline
-	\textbf{Stardate Test Performed}           & \\ \hline
-	\textbf{Starbase Test Performed}           & \\ \hline
-	\textbf{Test System Serial \#}             & \\ \hline
-	\textbf{Test Computer Serial \#}           & \\ \hline
-	\textbf{Functional self-sealing stem bolt} & \\ \hline
-	\textbf{Defective self-sealing stem bolt}  & \\ \hline
+	\textbf{Stardate Test Performed}                & \\ \hline
+	\textbf{Starbase Test Performed}                & \\ \hline
+	\textbf{Test System Serial \#}                  & \\ \hline
+	\textbf{Test Computer Serial \#}                & \\ \hline
+	\textbf{Planetary Environment Emulator (PEE)\#} & \\ \hline
+	\textbf{Functional self-sealing stem bolt}      & \\ \hline
+	\textbf{Defective self-sealing stem bolt}       & \\ \hline
 \end{tabularx}
 \egroup
 
@@ -273,6 +311,15 @@ No special setup and configuration is required beyond ensuring calibration of Tr
 
 	\\ \hline
 
+	\addtocounter{teststepctr}{1} \theteststepctr \ &
+	Verify that the self-sealing stem bolt work in a Mercury. Insert the self-sealing stem-bolt into the PEE and set it to emulate Mercury (42\% \ce{O_2} 29\% \ce{Na} 22\% \ce{H_2} 7\% mix of \ce{He, K, Ar, CO_2, H_2O, N_2 Xe, Kr, Ne}). Activate the self-sealing stem bolt by pressing the \textit{power-on} button. Observe the self-sealing stem bolt for 65 minutes.&
+	The self-sealing stem bolt works correctly. No fault occurs.
+	&
+
+	&
+
+	\\ \hline
+
 \end{xltabular}
 \egroup
 
@@ -290,7 +337,7 @@ No special setup and configuration is required beyond ensuring calibration of Tr
 	\begin{tabular}{@{}p{0.98in}p{3.2in}p{0.3in}p{1.4in}@{}}
 		\rule{0pt}{3ex}                                                  \\
 		Completed by: & \hrulefill                  & Date: & \hrulefill \\
-		              & Lieutenant junior grade Nog &       &            \\
+		              & Lieutenant Junior Grade Nog &       &            \\
 		              & Junior Engineer             &       &            \\
 	\end{tabular}
 	\egroup
@@ -323,7 +370,7 @@ No special setup and configuration is required beyond ensuring calibration of Tr
 \end{tabularx}
 \egroup
 
-
+\newpage
 \section{Document Revision History}
 
 
